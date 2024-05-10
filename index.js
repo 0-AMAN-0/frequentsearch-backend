@@ -19,6 +19,6 @@ const postData = require("./routes/main");
 app.use("/api/v1", postData);
 
 connectToDatabase()
-app.listen(3000, () => {
+app.listen(3000, "0.0.0.0", () => {
     console.log(`Server started on 3000`)
 })
