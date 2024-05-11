@@ -3,6 +3,7 @@ const { connectToDatabase } = require("./config/dbconfig")
 const cors = require("cors")
 const app = express();
 
+const PORT = 3000 || process.env.PORT
 
 
 app.use(express.json());
@@ -19,6 +20,6 @@ const postData = require("./routes/main");
 app.use("/api/v1", postData);
 
 connectToDatabase()
-app.listen(3000, "0.0.0.0", () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server started on 3000`)
 })
